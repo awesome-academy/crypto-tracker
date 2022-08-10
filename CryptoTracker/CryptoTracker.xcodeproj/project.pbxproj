@@ -120,7 +120,6 @@
 		E336086028A3649900D0661E /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
-				E33608AD28A367A900D0661E /* Controllers */,
 				E33608AC28A3677600D0661E /* Core data */,
 				E33608AA28A3674100D0661E /* Scenes */,
 				E33608A528A365E000D0661E /* AppDelegates */,
@@ -176,6 +175,7 @@
 		E33608AA28A3674100D0661E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E336086528A3649900D0661E /* ViewController.swift */,
 				E33608AB28A3674500D0661E /* Base.lproj */,
 			);
 			path = Scenes;
@@ -196,14 +196,6 @@
 				E336086A28A3649900D0661E /* CryptoTracker.xcdatamodeld */,
 			);
 			path = "Core data";
-			sourceTree = "<group>";
-		};
-		E33608AD28A367A900D0661E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E336086528A3649900D0661E /* ViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
