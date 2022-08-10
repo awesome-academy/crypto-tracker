@@ -1,5 +1,5 @@
 ## Related Tickets
-- [#Task xxxxx: Content](https://edu-redmine.sun-asterisk.vn/issues/xxxx)
+- [#Task xxxx: Content](https://edu-redmine.sun-asterisk.vn/issues/xxxx)
 ## WHAT
 - 
 ## Evidence (Screenshot or Video)
@@ -18,3 +18,4 @@ Redmine | Sun* Redmine working process  | https://sal.vn/piPoQn |<li>- [ ] yes</
 *(List gem, library third party add new)*
 
 *(Other notes)*
+/var/folders/0l/p7xdcgf90j7ggg13kg_kxl6w0000gn/T/TemporaryItems/(A Document Being Saved By screencaptureui 21)/Screen Shot 2022-08-10 at 16.46.30.png
