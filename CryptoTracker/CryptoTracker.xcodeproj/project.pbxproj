@@ -27,6 +27,13 @@
 		E336091528A49F8300D0661E /* WatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E336091328A49F8300D0661E /* WatchListViewController.xib */; };
 		E336091B28A4A01000D0661E /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336091A28A4A01000D0661E /* TabbarViewController.swift */; };
 		E336093828A4E83800D0661E /* TabbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336093728A4E83800D0661E /* TabbarItems.swift */; };
+		E336094228A4F9B600D0661E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094128A4F9B600D0661E /* Coin.swift */; };
+		E336094828A4FEE400D0661E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094728A4FEE400D0661E /* APIService.swift */; };
+		E336094C28A507A500D0661E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094B28A507A500D0661E /* Network.swift */; };
+		E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF353E28A5EA4E0043289C /* BaseCoin.swift */; };
+		E3CF354328A5EC130043289C /* RankingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF354228A5EC130043289C /* RankingPath.swift */; };
+		E3CF355A28A610C60043289C /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3CF355928A610C60043289C /* Key.plist */; };
+		E3CF355E28A62C970043289C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF355D28A62C970043289C /* RequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +74,7 @@
 		E336086B28A3649900D0661E /* CryptoTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoTracker.xcdatamodel; sourceTree = "<group>"; };
 		E336086D28A3649D00D0661E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E336087028A3649D00D0661E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E336087228A3649D00D0661E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E336087228A3649D00D0661E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = CryptoTracker/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
 		E336087728A3649D00D0661E /* CryptoTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E336087B28A3649D00D0661E /* CryptoTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerTests.swift; sourceTree = "<group>"; };
 		E336087D28A3649D00D0661E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +91,13 @@
 		E336091328A49F8300D0661E /* WatchListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListViewController.xib; sourceTree = "<group>"; };
 		E336091A28A4A01000D0661E /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		E336093728A4E83800D0661E /* TabbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItems.swift; sourceTree = "<group>"; };
+		E336094128A4F9B600D0661E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		E336094728A4FEE400D0661E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E336094B28A507A500D0661E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E3CF353E28A5EA4E0043289C /* BaseCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoin.swift; sourceTree = "<group>"; };
+		E3CF354228A5EC130043289C /* RankingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPath.swift; sourceTree = "<group>"; };
+		E3CF355928A610C60043289C /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
+		E3CF355D28A62C970043289C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +150,12 @@
 		E336086028A3649900D0661E /* CryptoTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E336093F28A4F50600D0661E /* Data */,
 				E33608AC28A3677600D0661E /* Core data */,
 				E33608AA28A3674100D0661E /* Scenes */,
 				E33608A528A365E000D0661E /* AppDelegates */,
 				E336089428A364A400D0661E /* Extensions */,
 				E336089828A364AB00D0661E /* Resources */,
-				E336087228A3649D00D0661E /* Info.plist */,
 			);
 			path = CryptoTracker;
 			sourceTree = "<group>";
@@ -174,7 +188,9 @@
 		E336089828A364AB00D0661E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E336087228A3649D00D0661E /* Info.plist */,
 				E336086D28A3649D00D0661E /* Assets.xcassets */,
+				E3CF355928A610C60043289C /* Key.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -260,6 +276,35 @@
 				E336093728A4E83800D0661E /* TabbarItems.swift */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		E336093F28A4F50600D0661E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E336094028A4F50B00D0661E /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E336094028A4F50B00D0661E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3CF353728A5EA0F0043289C /* Networking */,
+				E336094128A4F9B600D0661E /* Coin.swift */,
+				E3CF353E28A5EA4E0043289C /* BaseCoin.swift */,
+				E3CF354228A5EC130043289C /* RankingPath.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3CF353728A5EA0F0043289C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E336094728A4FEE400D0661E /* APIService.swift */,
+				E336094B28A507A500D0661E /* Network.swift */,
+				E3CF355D28A62C970043289C /* RequestError.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3CF355A28A610C60043289C /* Key.plist in Resources */,
 				E336087128A3649D00D0661E /* LaunchScreen.storyboard in Resources */,
 				E33608EC28A49CA500D0661E /* PortfolioViewController.xib in Resources */,
 				E33608F828A49CDF00D0661E /* HomeViewController.xib in Resources */,
@@ -426,12 +472,18 @@
 			files = (
 				E336093828A4E83800D0661E /* TabbarItems.swift in Sources */,
 				E336086228A3649900D0661E /* AppDelegate.swift in Sources */,
+				E336094C28A507A500D0661E /* Network.swift in Sources */,
 				E336090128A49CFB00D0661E /* CalculatorViewController.swift in Sources */,
 				E336086428A3649900D0661E /* SceneDelegate.swift in Sources */,
+				E336094828A4FEE400D0661E /* APIService.swift in Sources */,
 				E33608EB28A49CA500D0661E /* PortfolioViewController.swift in Sources */,
 				E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */,
 				E336091428A49F8300D0661E /* WatchListViewController.swift in Sources */,
+				E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */,
+				E3CF354328A5EC130043289C /* RankingPath.swift in Sources */,
+				E3CF355E28A62C970043289C /* RequestError.swift in Sources */,
 				E33608F728A49CDF00D0661E /* HomeViewController.swift in Sources */,
+				E336094228A4F9B600D0661E /* Coin.swift in Sources */,
 				E336091B28A4A01000D0661E /* TabbarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +655,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CryptoTracker/Info.plist;
+				INFOPLIST_FILE = CryptoTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,7 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CryptoTracker/Info.plist;
+				INFOPLIST_FILE = CryptoTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
