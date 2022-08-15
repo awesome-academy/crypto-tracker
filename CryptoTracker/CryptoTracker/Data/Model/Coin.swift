@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct CoinList: Codable{
+struct CoinList: Codable {
     let coins: [Coin]
 }
 
