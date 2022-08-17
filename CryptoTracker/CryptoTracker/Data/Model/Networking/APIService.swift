@@ -25,13 +25,16 @@ class APIService {
       }
     }
 
-    func requestData<T: Codable>(urlString: String, method: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+    func requestData<T: Codable>(urlString: String,
+                                 method: HTTPMethod,
+                                 expecting: T.Type,
+                                 completion: @escaping (Result<T, Error>) -> Void) {
         let url = URL(string: urlString)
         guard let urlPath = url else {
             return
         }
         var request = URLRequest(url: urlPath)
-        request.httpMethod = method
+        request.httpMethod = method.rawValue
         request.setValue(apiKey, forHTTPHeaderField: "x-access-token")
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, _, error in
             if let error = error {
@@ -45,7 +48,6 @@ class APIService {
             }
             do {
                 let result = try JSONDecoder().decode(expecting, from: data)
-                print(result)
                 completion(.success(result))
             } catch {
                 completion(.failure(error))

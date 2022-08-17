@@ -22,4 +22,20 @@ final class CoinCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        coinImage.image = nil
+    }
+
+    func setDataInCellBy(coin: Coin) {
+        coinName.text = coin.name
+        coinSympol.text = coin.symbol
+        priceLabel.setPriceNumber(priceString: coin.price)
+        priceChangeLabel.setPriceChangeNumber(priceChangeString: coin.change)
+        let pngUrl = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
+        if let url = URL(string: pngUrl) {
+            coinImage.setImage(from: url)
+        }
+    }
 }

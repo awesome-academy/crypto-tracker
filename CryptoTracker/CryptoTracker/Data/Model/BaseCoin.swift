@@ -11,14 +11,16 @@ struct BaseCoin: Decodable {
     let uuid: String
     let iconUrl: String
     let name: String
-    let sympol: String
+    let symbol: String
     let price: String
+    let change: String
 
     private enum Codingkeys: String, CodingKey {
         case uuid
         case iconUrl
         case name
-        case sympol
+        case symbol
         case price
+        case change
     }
 }
