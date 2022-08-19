@@ -8,8 +8,8 @@
 import Foundation
 
 enum RankingPath: String {
-    case topCoin = "v2/coins?orderBy=price&limit=10"
-    case topChange = "v2/coins?orderBy=change&limit=10"
-    case top24Volume = "v2/coins?orderBy=24hVolume&limit=10"
-    case topMarketCap = "v2/coins?orderBy=marketCap&limit=10"
+    case topPrice = "v2/coins?orderBy=price&limit=20"
+    case topChange = "v2/coins?orderBy=change&limit=20"
+    case top24Volume = "v2/coins?orderBy=24hVolume&limit=20"
+    case topMarketCap = "v2/coins?orderBy=marketCap&limit=20"
 }

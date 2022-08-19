@@ -8,15 +8,23 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-
+    @IBOutlet private weak var rankedByChangeButton: UIButton!
+    @IBOutlet private weak var rankedBy2VolumePerDayButton: UIButton!
+    @IBOutlet weak private var rankedByMarketCapButton: UIButton!
+    @IBOutlet private weak var rankedByPriceButton: UIButton!
     @IBOutlet private weak var rankButton: UIButton!
     @IBOutlet private weak var coinTableView: UITableView!
     @IBOutlet private weak var rankStackView: UIStackView!
     @IBOutlet var rankOptions: [UIButton]!
 
+    private var urlResquest = Network.shared.getCoinsURL(path: RankingPath.topMarketCap)
+    private var listTopCoin = [Coin]()
+    private var apiRepository =  APIRepository()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configViews()
+        fetchDataFromAPI(urlRequet: urlResquest)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +40,19 @@ final class HomeViewController: UIViewController {
 
     @IBAction private func rankButtonPressed(_ sender: UIButton) {
         rankStackView.isHidden = true
-        self.coinTableView.reloadData()
+        switch sender {
+        case rankedByPriceButton:
+            urlResquest = Network.shared.getCoinsURL(path: RankingPath.topPrice)
+        case rankedByChangeButton:
+            urlResquest = Network.shared.getCoinsURL(path: RankingPath.topChange)
+        case rankedByMarketCapButton:
+            urlResquest = Network.shared.getCoinsURL(path: RankingPath.topMarketCap)
+        case rankedBy2VolumePerDayButton:
+            urlResquest = Network.shared.getCoinsURL(path: RankingPath.top24Volume)
+        default:
+            return
+        }
+        fetchDataFromAPI(urlRequet: urlResquest)
     }
 
     @IBAction private func openRankingOptions(_ sender: UIButton) {
@@ -43,14 +63,40 @@ final class HomeViewController: UIViewController {
         let searchVC = SearchViewController()
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
+
+    private func fetchDataFromAPI (urlRequet: String) {
+        apiRepository.getListCoin(url: urlResquest, method: HTTPMethod.get) { [unowned self] coins, error in
+            guard let coins = coins, error == nil else {
+                self.showAlert(title: "Alert", message: error?.localizedDescription ?? "Undetected Error")
+                return
+            }
+            self.listTopCoin = coins
+            DispatchQueue.main.async {
+                self.coinTableView.reloadData()
+            }
+        }
+    }
+
+    private func fetchMoreDataFromAPI (url: String) {
+        apiRepository.getListCoin(url: url, method: HTTPMethod.get) { [unowned self] coins, error in
+            guard let coins = coins, error == nil else {
+                self.showAlert(title: "Alert", message: error?.localizedDescription ?? "Undetected Error")
+                return
+            }
+            self.listTopCoin.append(contentsOf: coins)
+            DispatchQueue.main.async {
+                self.coinTableView.reloadData()
+            }
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         guard let cell = coinTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinCell else {
             return UITableViewCell()
         }
+        cell.setDataInCellBy(coin: listTopCoin[indexPath.row])
         return cell
     }
 
@@ -67,6 +113,11 @@ extension HomeViewController: UITableViewDelegate {
 }
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return listTopCoin.count
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if listTopCoin.count - 1 == indexPath.row {
+            fetchMoreDataFromAPI(url: urlResquest + "&offset=\(listTopCoin.count)")
+        }
     }
 }

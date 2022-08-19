@@ -13,6 +13,12 @@
 		E31021C328A9E527002D3D4D /* CoinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31021C128A9E527002D3D4D /* CoinCell.xib */; };
 		E31021C928AA1C2E002D3D4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021C728AA1C2E002D3D4D /* DetailViewController.swift */; };
 		E31021CA28AA1C2E002D3D4D /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E31021C828AA1C2E002D3D4D /* DetailViewController.xib */; };
+		E31021D228AB29CA002D3D4D /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021D128AB29CA002D3D4D /* APIRepository.swift */; };
+		E31021D628AB29D7002D3D4D /* Reponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021D528AB29D7002D3D4D /* Reponse.swift */; };
+		E31021DC28AB354D002D3D4D /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021DB28AB354D002D3D4D /* UIImageView+Extensions.swift */; };
+		E31021E028AB6FF6002D3D4D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021DF28AB6FF6002D3D4D /* ImageManager.swift */; };
+		E31021E428AB822A002D3D4D /* CoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021E328AB822A002D3D4D /* CoinList.swift */; };
+		E31021EE28AC908F002D3D4D /* UILable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021ED28AC908E002D3D4D /* UILable+Extensions.swift */; };
 		E336086228A3649900D0661E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336086128A3649900D0661E /* AppDelegate.swift */; };
 		E336086428A3649900D0661E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336086328A3649900D0661E /* SceneDelegate.swift */; };
 		E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E336086A28A3649900D0661E /* CryptoTracker.xcdatamodeld */; };
@@ -40,6 +46,8 @@
 		E3CF354328A5EC130043289C /* RankingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF354228A5EC130043289C /* RankingPath.swift */; };
 		E3CF355A28A610C60043289C /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3CF355928A610C60043289C /* Key.plist */; };
 		E3CF355E28A62C970043289C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF355D28A62C970043289C /* RequestError.swift */; };
+		E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF5D3128ADD75D00ED1588 /* HTTPMethod.swift */; };
+		E3EF5D3628ADE98B00ED1588 /* UIViewController+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +88,12 @@
 		E31021C128A9E527002D3D4D /* CoinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinCell.xib; sourceTree = "<group>"; };
 		E31021C728AA1C2E002D3D4D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E31021C828AA1C2E002D3D4D /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		E31021D128AB29CA002D3D4D /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		E31021D528AB29D7002D3D4D /* Reponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reponse.swift; sourceTree = "<group>"; };
+		E31021DB28AB354D002D3D4D /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		E31021DF28AB6FF6002D3D4D /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		E31021E328AB822A002D3D4D /* CoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinList.swift; sourceTree = "<group>"; };
+		E31021ED28AC908E002D3D4D /* UILable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Extensions.swift"; sourceTree = "<group>"; };
 		E336085E28A3649900D0661E /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E336086128A3649900D0661E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E336086328A3649900D0661E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +124,8 @@
 		E3CF354228A5EC130043289C /* RankingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPath.swift; sourceTree = "<group>"; };
 		E3CF355928A610C60043289C /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		E3CF355D28A62C970043289C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		E3EF5D3128ADD75D00ED1588 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extenstions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +236,9 @@
 		E336089428A364A400D0661E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E31021DB28AB354D002D3D4D /* UIImageView+Extensions.swift */,
+				E31021ED28AC908E002D3D4D /* UILable+Extensions.swift */,
+				E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,10 +265,10 @@
 		E33608AA28A3674100D0661E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E33608CF28A4975600D0661E /* Home */,
 				E31021C628AA1C0E002D3D4D /* Detail */,
 				E31021B828A9E012002D3D4D /* Search */,
 				E336092A28A4B91000D0661E /* Tabbar */,
-				E33608CF28A4975600D0661E /* Home */,
 				E33608D228A4979B00D0661E /* Caculator */,
 				E33608D128A4977C00D0661E /* WatchList */,
 				E33608D328A497D700D0661E /* Portfolio */,
@@ -332,9 +351,12 @@
 			isa = PBXGroup;
 			children = (
 				E3CF353728A5EA0F0043289C /* Networking */,
+				E3CF354228A5EC130043289C /* RankingPath.swift */,
 				E336094128A4F9B600D0661E /* Coin.swift */,
 				E3CF353E28A5EA4E0043289C /* BaseCoin.swift */,
-				E3CF354228A5EC130043289C /* RankingPath.swift */,
+				E31021D528AB29D7002D3D4D /* Reponse.swift */,
+				E31021DF28AB6FF6002D3D4D /* ImageManager.swift */,
+				E31021E328AB822A002D3D4D /* CoinList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +367,8 @@
 				E336094728A4FEE400D0661E /* APIService.swift */,
 				E336094B28A507A500D0661E /* Network.swift */,
 				E3CF355D28A62C970043289C /* RequestError.swift */,
+				E31021D128AB29CA002D3D4D /* APIRepository.swift */,
+				E3EF5D3128ADD75D00ED1588 /* HTTPMethod.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -516,20 +540,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				E336093828A4E83800D0661E /* TabbarItems.swift in Sources */,
+				E3EF5D3628ADE98B00ED1588 /* UIViewController+Extenstions.swift in Sources */,
 				E336086228A3649900D0661E /* AppDelegate.swift in Sources */,
 				E336094C28A507A500D0661E /* Network.swift in Sources */,
 				E336090128A49CFB00D0661E /* CalculatorViewController.swift in Sources */,
+				E31021EE28AC908F002D3D4D /* UILable+Extensions.swift in Sources */,
 				E336086428A3649900D0661E /* SceneDelegate.swift in Sources */,
 				E336094828A4FEE400D0661E /* APIService.swift in Sources */,
+				E31021D228AB29CA002D3D4D /* APIRepository.swift in Sources */,
+				E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */,
 				E33608EB28A49CA500D0661E /* PortfolioViewController.swift in Sources */,
 				E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */,
+				E31021E028AB6FF6002D3D4D /* ImageManager.swift in Sources */,
 				E336091428A49F8300D0661E /* WatchListViewController.swift in Sources */,
+				E31021E428AB822A002D3D4D /* CoinList.swift in Sources */,
 				E31021C928AA1C2E002D3D4D /* DetailViewController.swift in Sources */,
 				E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */,
 				E31021C228A9E527002D3D4D /* CoinCell.swift in Sources */,
 				E31021BB28A9E04E002D3D4D /* SearchViewController.swift in Sources */,
 				E3CF354328A5EC130043289C /* RankingPath.swift in Sources */,
+				E31021DC28AB354D002D3D4D /* UIImageView+Extensions.swift in Sources */,
 				E3CF355E28A62C970043289C /* RequestError.swift in Sources */,
+				E31021D628AB29D7002D3D4D /* Reponse.swift in Sources */,
 				E33608F728A49CDF00D0661E /* HomeViewController.swift in Sources */,
 				E336094228A4F9B600D0661E /* Coin.swift in Sources */,
 				E336091B28A4A01000D0661E /* TabbarViewController.swift in Sources */,

@@ -18,10 +18,6 @@ struct Network {
         return "\(baseUrl)\(path.rawValue)"
     }
 
-    func getRankingURL() -> String {
-        return "\(baseUrl)/coins?limit=10"
-    }
-
     func getDetailURL(uuid: String) -> String {
         return "\(baseUrl)/coin/\(uuid)"
     }
