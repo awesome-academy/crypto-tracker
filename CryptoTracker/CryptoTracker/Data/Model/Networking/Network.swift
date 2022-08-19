@@ -12,10 +12,10 @@ struct Network {
 
     private init () {}
 
-    private let baseUrl = "https://api.coinranking.com/"
+    private let baseUrl = "https://api.coinranking.com/v2"
 
-    func getCoinsURL(path: RankingPath) -> String {
-        return "\(baseUrl)\(path.rawValue)"
+    func getCoinsURL(rank: Rangking) -> String {
+        return "\(baseUrl)/coins?orderBy=\(rank.rawValue)&limit=20"
     }
 
     func getDetailURL(uuid: String) -> String {

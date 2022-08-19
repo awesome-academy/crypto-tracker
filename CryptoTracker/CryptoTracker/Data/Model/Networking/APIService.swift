@@ -13,7 +13,6 @@ class APIService {
     private init () {}
 
     private var apiKey: String {
-      get {
         guard let filePath = Bundle.main.path(forResource: "Key", ofType: "plist") else {
           fatalError("Can't find file 'Key.plist'.")
         }
@@ -22,11 +21,10 @@ class APIService {
           fatalError("Can't find key in 'Key.plist'.")
         }
         return value
-      }
     }
 
     func requestData<T: Codable>(urlString: String,
-                                 method: HTTPMethod,
+                                 method: HTTPMethod.RawValue,
                                  expecting: T.Type,
                                  completion: @escaping (Result<T, Error>) -> Void) {
         let url = URL(string: urlString)
@@ -34,12 +32,11 @@ class APIService {
             return
         }
         var request = URLRequest(url: urlPath)
-        request.httpMethod = method.rawValue
+        request.httpMethod = method
         request.setValue(apiKey, forHTTPHeaderField: "x-access-token")
         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, _, error in
             if let error = error {
                 completion(.failure(error))
-                print(error.localizedDescription)
                 return
             }
             guard let data = data else {

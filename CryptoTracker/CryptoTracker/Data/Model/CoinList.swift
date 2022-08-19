@@ -10,3 +10,7 @@ import Foundation
 struct CoinList: Codable {
     let coins: [Coin]
 }
+
+struct SearchCoinList: Codable {
+    let coins: [BaseCoin]
+}

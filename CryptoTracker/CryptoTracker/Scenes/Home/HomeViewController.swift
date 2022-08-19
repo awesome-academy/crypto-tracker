@@ -15,16 +15,15 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var rankButton: UIButton!
     @IBOutlet private weak var coinTableView: UITableView!
     @IBOutlet private weak var rankStackView: UIStackView!
-    @IBOutlet var rankOptions: [UIButton]!
 
-    private var urlResquest = Network.shared.getCoinsURL(path: RankingPath.topMarketCap)
+    private var urlResquest = Network.shared.getCoinsURL(rank: .marketCap)
     private var listTopCoin = [Coin]()
     private var apiRepository =  APIRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configViews()
-        fetchDataFromAPI(urlRequet: urlResquest)
+        fetchDataFromAPI(urlRequet: urlResquest, message: .undetectedError)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,17 +41,17 @@ final class HomeViewController: UIViewController {
         rankStackView.isHidden = true
         switch sender {
         case rankedByPriceButton:
-            urlResquest = Network.shared.getCoinsURL(path: RankingPath.topPrice)
+            urlResquest = Network.shared.getCoinsURL(rank: .price)
         case rankedByChangeButton:
-            urlResquest = Network.shared.getCoinsURL(path: RankingPath.topChange)
+            urlResquest = Network.shared.getCoinsURL(rank: .change)
         case rankedByMarketCapButton:
-            urlResquest = Network.shared.getCoinsURL(path: RankingPath.topMarketCap)
+            urlResquest = Network.shared.getCoinsURL(rank: .marketCap)
         case rankedBy2VolumePerDayButton:
-            urlResquest = Network.shared.getCoinsURL(path: RankingPath.top24Volume)
+            urlResquest = Network.shared.getCoinsURL(rank: .volume)
         default:
             return
         }
-        fetchDataFromAPI(urlRequet: urlResquest)
+        fetchDataFromAPI(urlRequet: urlResquest, message: .undetectedError)
     }
 
     @IBAction private func openRankingOptions(_ sender: UIButton) {
@@ -64,10 +63,10 @@ final class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
 
-    private func fetchDataFromAPI (urlRequet: String) {
-        apiRepository.getListCoin(url: urlResquest, method: HTTPMethod.get) { [unowned self] coins, error in
-            guard let coins = coins, error == nil else {
-                self.showAlert(title: "Alert", message: error?.localizedDescription ?? "Undetected Error")
+    private func fetchDataFromAPI (urlRequet: String, message: Constants) {
+        apiRepository.getListCoin(url: urlResquest, method: .get) { [unowned self] coins, error in
+            guard error == nil, let coins = coins else {
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? message.rawValue)
                 return
             }
             self.listTopCoin = coins
@@ -77,10 +76,10 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    private func fetchMoreDataFromAPI (url: String) {
-        apiRepository.getListCoin(url: url, method: HTTPMethod.get) { [unowned self] coins, error in
-            guard let coins = coins, error == nil else {
-                self.showAlert(title: "Alert", message: error?.localizedDescription ?? "Undetected Error")
+    private func fetchMoreDataFromAPI (url: String, message: Constants) {
+        apiRepository.getListCoin(url: url, method: .get) { [unowned self] coins, error in
+            guard error == nil, let coins = coins else {
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? message.rawValue)
                 return
             }
             self.listTopCoin.append(contentsOf: coins)
@@ -96,7 +95,7 @@ extension HomeViewController: UITableViewDelegate {
         guard let cell = coinTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinCell else {
             return UITableViewCell()
         }
-        cell.setDataInCellBy(coin: listTopCoin[indexPath.row])
+        cell.setDataInCell(coin: listTopCoin[indexPath.row])
         return cell
     }
 
@@ -108,6 +107,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coinTableView.deselectRow(at: indexPath, animated: false)
         let detailVC = DetailViewController()
+        detailVC.uuid = listTopCoin[indexPath.row].uuid
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
@@ -115,9 +115,10 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listTopCoin.count
     }
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if listTopCoin.count - 1 == indexPath.row {
-            fetchMoreDataFromAPI(url: urlResquest + "&offset=\(listTopCoin.count)")
+            fetchMoreDataFromAPI(url: urlResquest + "&offset=\(listTopCoin.count)", message: .undetectedError)
         }
     }
 }

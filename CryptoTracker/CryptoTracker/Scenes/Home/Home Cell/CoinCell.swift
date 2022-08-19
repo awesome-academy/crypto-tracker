@@ -28,11 +28,21 @@ final class CoinCell: UITableViewCell {
         coinImage.image = nil
     }
 
-    func setDataInCellBy(coin: Coin) {
+    func setDataInCell(coin: Coin) {
         coinName.text = coin.name
         coinSympol.text = coin.symbol
         priceLabel.setPriceNumber(priceString: coin.price)
         priceChangeLabel.setPriceChangeNumber(priceChangeString: coin.change)
+        let pngUrl = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
+        if let url = URL(string: pngUrl) {
+            coinImage.setImage(from: url)
+        }
+    }
+    func setDataInCell(coin: BaseCoin, error: Constants) {
+        coinName.text = coin.name
+        coinSympol.text = coin.symbol
+        priceLabel.setPriceNumber(priceString: coin.price ?? error.rawValue)
+        priceChangeLabel.isHidden = true
         let pngUrl = coin.iconUrl.replacingOccurrences(of: "svg", with: "png")
         if let url = URL(string: pngUrl) {
             coinImage.setImage(from: url)

@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct BaseCoin: Decodable {
+struct BaseCoin: Codable {
     let uuid: String
     let iconUrl: String
     let name: String
     let symbol: String
-    let price: String
-    let change: String
+    let price: String?
 
     private enum Codingkeys: String, CodingKey {
         case uuid
@@ -21,6 +20,5 @@ struct BaseCoin: Decodable {
         case name
         case symbol
         case price
-        case change
     }
 }

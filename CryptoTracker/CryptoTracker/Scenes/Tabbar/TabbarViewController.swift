@@ -13,7 +13,7 @@ final class TabbarViewController: UITabBarController {
         super.viewDidLoad()
         configTabbar()
     }
-    
+
     private func configTabbar() {
         view.backgroundColor = .white
         self.viewControllers = [
@@ -24,7 +24,8 @@ final class TabbarViewController: UITabBarController {
         ]
     }
 
-    private func configSubNavigationController(viewController: UIViewController, item: UITabBarItem) -> UINavigationController {
+    private func configSubNavigationController(viewController: UIViewController,
+                                               item: UITabBarItem) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.tabBarItem = item
         return navigationController
