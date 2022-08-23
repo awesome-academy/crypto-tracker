@@ -52,7 +52,7 @@ final class SearchViewController: UIViewController {
 
     private func pushToDetailViewController (index: Int) {
         let detailVC = DetailViewController()
-        detailVC.uuid = listSearchCoin[index].uuid
+        detailVC.setUuid(uuid: listSearchCoin[index].uuid)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 

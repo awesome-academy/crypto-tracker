@@ -107,7 +107,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coinTableView.deselectRow(at: indexPath, animated: false)
         let detailVC = DetailViewController()
-        detailVC.uuid = listTopCoin[indexPath.row].uuid
+        detailVC.setUuid(uuid: listTopCoin[indexPath.row].uuid)
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

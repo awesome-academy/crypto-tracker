@@ -22,6 +22,10 @@ struct Network {
         return "\(baseUrl)/coin/\(uuid)"
     }
 
+    func getHistoryPriceURL(uuid: String, time: TimeSegment.RawValue) -> String {
+        return "\(baseUrl)/coin/\(uuid)/history?timePeriod=\(time)"
+    }
+
     func getSearchURL(name: String) -> String {
         return "\(baseUrl)/search-suggestions?query=\(name)"
     }
