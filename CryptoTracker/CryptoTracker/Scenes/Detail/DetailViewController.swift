@@ -8,7 +8,7 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
-
+    var uuid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         configViews()

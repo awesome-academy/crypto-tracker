@@ -19,7 +19,7 @@ extension UILabel {
 
     func setPriceNumber(priceString: String) {
         guard let priceNumber = Double(priceString) else {
-            self.text = ""
+            self.text = "Untracked"
             return
         }
         self.text = "$" + String(format: "%.2f", priceNumber)

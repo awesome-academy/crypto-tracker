@@ -43,11 +43,13 @@
 		E336094828A4FEE400D0661E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094728A4FEE400D0661E /* APIService.swift */; };
 		E336094C28A507A500D0661E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094B28A507A500D0661E /* Network.swift */; };
 		E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF353E28A5EA4E0043289C /* BaseCoin.swift */; };
-		E3CF354328A5EC130043289C /* RankingPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF354228A5EC130043289C /* RankingPath.swift */; };
-		E3CF355A28A610C60043289C /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3CF355928A610C60043289C /* Key.plist */; };
+		E3CF354328A5EC130043289C /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF354228A5EC130043289C /* Ranking.swift */; };
 		E3CF355E28A62C970043289C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF355D28A62C970043289C /* RequestError.swift */; };
 		E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF5D3128ADD75D00ED1588 /* HTTPMethod.swift */; };
 		E3EF5D3628ADE98B00ED1588 /* UIViewController+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */; };
+		E3EF5D5928AFB18900ED1588 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */; };
+		E3EF5D5D28AFB27100ED1588 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3EF5D5C28AFB27100ED1588 /* Key.plist */; };
+		E3FF502128B33A2900CF373F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF502028B33A2900CF373F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,11 +123,13 @@
 		E336094728A4FEE400D0661E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E336094B28A507A500D0661E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E3CF353E28A5EA4E0043289C /* BaseCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoin.swift; sourceTree = "<group>"; };
-		E3CF354228A5EC130043289C /* RankingPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingPath.swift; sourceTree = "<group>"; };
-		E3CF355928A610C60043289C /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
+		E3CF354228A5EC130043289C /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		E3CF355D28A62C970043289C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		E3EF5D3128ADD75D00ED1588 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extenstions.swift"; sourceTree = "<group>"; };
+		E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		E3EF5D5C28AFB27100ED1588 /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
+		E3FF502028B33A2900CF373F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 				E31021DB28AB354D002D3D4D /* UIImageView+Extensions.swift */,
 				E31021ED28AC908E002D3D4D /* UILable+Extensions.swift */,
 				E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */,
+				E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,7 +253,7 @@
 			children = (
 				E336087228A3649D00D0661E /* Info.plist */,
 				E336086D28A3649D00D0661E /* Assets.xcassets */,
-				E3CF355928A610C60043289C /* Key.plist */,
+				E3EF5D5C28AFB27100ED1588 /* Key.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -351,12 +356,13 @@
 			isa = PBXGroup;
 			children = (
 				E3CF353728A5EA0F0043289C /* Networking */,
-				E3CF354228A5EC130043289C /* RankingPath.swift */,
+				E3CF354228A5EC130043289C /* Ranking.swift */,
 				E336094128A4F9B600D0661E /* Coin.swift */,
 				E3CF353E28A5EA4E0043289C /* BaseCoin.swift */,
 				E31021D528AB29D7002D3D4D /* Reponse.swift */,
 				E31021DF28AB6FF6002D3D4D /* ImageManager.swift */,
 				E31021E328AB822A002D3D4D /* CoinList.swift */,
+				E3FF502028B33A2900CF373F /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,13 +491,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3CF355A28A610C60043289C /* Key.plist in Resources */,
 				E336087128A3649D00D0661E /* LaunchScreen.storyboard in Resources */,
 				E33608EC28A49CA500D0661E /* PortfolioViewController.xib in Resources */,
 				E33608F828A49CDF00D0661E /* HomeViewController.xib in Resources */,
 				E336086E28A3649D00D0661E /* Assets.xcassets in Resources */,
 				E336091528A49F8300D0661E /* WatchListViewController.xib in Resources */,
 				E31021BC28A9E04E002D3D4D /* SearchViewController.xib in Resources */,
+				E3EF5D5D28AFB27100ED1588 /* Key.plist in Resources */,
 				E31021CA28AA1C2E002D3D4D /* DetailViewController.xib in Resources */,
 				E31021C328A9E527002D3D4D /* CoinCell.xib in Resources */,
 				E336090228A49CFB00D0661E /* CalculatorViewController.xib in Resources */,
@@ -550,6 +556,7 @@
 				E31021D228AB29CA002D3D4D /* APIRepository.swift in Sources */,
 				E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */,
 				E33608EB28A49CA500D0661E /* PortfolioViewController.swift in Sources */,
+				E3FF502128B33A2900CF373F /* Constants.swift in Sources */,
 				E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */,
 				E31021E028AB6FF6002D3D4D /* ImageManager.swift in Sources */,
 				E336091428A49F8300D0661E /* WatchListViewController.swift in Sources */,
@@ -558,12 +565,13 @@
 				E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */,
 				E31021C228A9E527002D3D4D /* CoinCell.swift in Sources */,
 				E31021BB28A9E04E002D3D4D /* SearchViewController.swift in Sources */,
-				E3CF354328A5EC130043289C /* RankingPath.swift in Sources */,
+				E3CF354328A5EC130043289C /* Ranking.swift in Sources */,
 				E31021DC28AB354D002D3D4D /* UIImageView+Extensions.swift in Sources */,
 				E3CF355E28A62C970043289C /* RequestError.swift in Sources */,
 				E31021D628AB29D7002D3D4D /* Reponse.swift in Sources */,
 				E33608F728A49CDF00D0661E /* HomeViewController.swift in Sources */,
 				E336094228A4F9B600D0661E /* Coin.swift in Sources */,
+				E3EF5D5928AFB18900ED1588 /* UINavigationController+Extensions.swift in Sources */,
 				E336091B28A4A01000D0661E /* TabbarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
