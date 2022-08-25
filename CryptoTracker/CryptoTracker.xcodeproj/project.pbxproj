@@ -21,7 +21,6 @@
 		E31021EE28AC908F002D3D4D /* UILable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31021ED28AC908E002D3D4D /* UILable+Extensions.swift */; };
 		E336086228A3649900D0661E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336086128A3649900D0661E /* AppDelegate.swift */; };
 		E336086428A3649900D0661E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336086328A3649900D0661E /* SceneDelegate.swift */; };
-		E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E336086A28A3649900D0661E /* CryptoTracker.xcdatamodeld */; };
 		E336086E28A3649D00D0661E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E336086D28A3649D00D0661E /* Assets.xcassets */; };
 		E336087128A3649D00D0661E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E336086F28A3649D00D0661E /* LaunchScreen.storyboard */; };
 		E336087C28A3649D00D0661E /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336087B28A3649D00D0661E /* CryptoTrackerTests.swift */; };
@@ -33,8 +32,6 @@
 		E33608F828A49CDF00D0661E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E33608F628A49CDF00D0661E /* HomeViewController.xib */; };
 		E336090128A49CFB00D0661E /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33608FF28A49CFB00D0661E /* CalculatorViewController.swift */; };
 		E336090228A49CFB00D0661E /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E336090028A49CFB00D0661E /* CalculatorViewController.xib */; };
-		E336091428A49F8300D0661E /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336091228A49F8300D0661E /* WatchListViewController.swift */; };
-		E336091528A49F8300D0661E /* WatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E336091328A49F8300D0661E /* WatchListViewController.xib */; };
 		E336091B28A4A01000D0661E /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336091A28A4A01000D0661E /* TabbarViewController.swift */; };
 		E336093828A4E83800D0661E /* TabbarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336093728A4E83800D0661E /* TabbarItems.swift */; };
 		E336094228A4F9B600D0661E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094128A4F9B600D0661E /* Coin.swift */; };
@@ -54,6 +51,13 @@
 		E3FF505428B4BF7000CF373F /* HistoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF505328B4BF7000CF373F /* HistoryStats.swift */; };
 		E3FF505828B4C5A700CF373F /* TimeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF505728B4C5A700CF373F /* TimeSegment.swift */; };
 		E3FF50EE28B66F4B00CF373F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF50ED28B66F4A00CF373F /* String+Extensions.swift */; };
+		E3FF50F528B70F7100CF373F /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF50F328B70F7100CF373F /* WatchListViewController.swift */; };
+		E3FF50F628B70F7100CF373F /* WatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FF50F428B70F7100CF373F /* WatchListViewController.xib */; };
+		E3FF510C28B7489B00CF373F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF510B28B7489B00CF373F /* UIView+Extensions.swift */; };
+		E3FF517628B87EB600CF373F /* CrytoTrackerer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3FF517428B87EB600CF373F /* CrytoTrackerer.xcdatamodeld */; };
+		E3FF517B28B87F3900CF373F /* WatchlistCoin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF517928B87F3900CF373F /* WatchlistCoin+CoreDataClass.swift */; };
+		E3FF517C28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF517A28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift */; };
+		E3FF518228B87F5800CF373F /* CoinDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF518128B87F5800CF373F /* CoinDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +106,6 @@
 		E336085E28A3649900D0661E /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E336086128A3649900D0661E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E336086328A3649900D0661E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E336086B28A3649900D0661E /* CryptoTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoTracker.xcdatamodel; sourceTree = "<group>"; };
 		E336086D28A3649D00D0661E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E336087028A3649D00D0661E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E336087228A3649D00D0661E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = CryptoTracker/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -118,8 +121,6 @@
 		E33608F628A49CDF00D0661E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		E33608FF28A49CFB00D0661E /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E336090028A49CFB00D0661E /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
-		E336091228A49F8300D0661E /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
-		E336091328A49F8300D0661E /* WatchListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListViewController.xib; sourceTree = "<group>"; };
 		E336091A28A4A01000D0661E /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		E336093728A4E83800D0661E /* TabbarItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItems.swift; sourceTree = "<group>"; };
 		E336094128A4F9B600D0661E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
@@ -139,6 +140,13 @@
 		E3FF505328B4BF7000CF373F /* HistoryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStats.swift; sourceTree = "<group>"; };
 		E3FF505728B4C5A700CF373F /* TimeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSegment.swift; sourceTree = "<group>"; };
 		E3FF50ED28B66F4A00CF373F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E3FF50F328B70F7100CF373F /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
+		E3FF50F428B70F7100CF373F /* WatchListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListViewController.xib; sourceTree = "<group>"; };
+		E3FF510B28B7489B00CF373F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E3FF517528B87EB600CF373F /* CrytoTrackerer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CrytoTrackerer.xcdatamodel; sourceTree = "<group>"; };
+		E3FF517928B87F3900CF373F /* WatchlistCoin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchlistCoin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E3FF517A28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchlistCoin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E3FF518128B87F5800CF373F /* CoinDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +261,7 @@
 				E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */,
 				E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */,
 				E3FF50ED28B66F4A00CF373F /* String+Extensions.swift */,
+				E3FF510B28B7489B00CF373F /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,7 +311,10 @@
 		E33608AC28A3677600D0661E /* Core data */ = {
 			isa = PBXGroup;
 			children = (
-				E336086A28A3649900D0661E /* CryptoTracker.xcdatamodeld */,
+				E3FF517928B87F3900CF373F /* WatchlistCoin+CoreDataClass.swift */,
+				E3FF517A28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift */,
+				E3FF517428B87EB600CF373F /* CrytoTrackerer.xcdatamodeld */,
+				E3FF518128B87F5800CF373F /* CoinDataRepository.swift */,
 			);
 			path = "Core data";
 			sourceTree = "<group>";
@@ -320,8 +332,8 @@
 		E33608D128A4977C00D0661E /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
-				E336091228A49F8300D0661E /* WatchListViewController.swift */,
-				E336091328A49F8300D0661E /* WatchListViewController.xib */,
+				E3FF50F328B70F7100CF373F /* WatchListViewController.swift */,
+				E3FF50F428B70F7100CF373F /* WatchListViewController.xib */,
 			);
 			path = WatchList;
 			sourceTree = "<group>";
@@ -514,9 +526,9 @@
 			files = (
 				E336087128A3649D00D0661E /* LaunchScreen.storyboard in Resources */,
 				E33608EC28A49CA500D0661E /* PortfolioViewController.xib in Resources */,
+				E3FF50F628B70F7100CF373F /* WatchListViewController.xib in Resources */,
 				E33608F828A49CDF00D0661E /* HomeViewController.xib in Resources */,
 				E336086E28A3649D00D0661E /* Assets.xcassets in Resources */,
-				E336091528A49F8300D0661E /* WatchListViewController.xib in Resources */,
 				E31021BC28A9E04E002D3D4D /* SearchViewController.xib in Resources */,
 				E3EF5D5D28AFB27100ED1588 /* Key.plist in Resources */,
 				E31021CA28AA1C2E002D3D4D /* DetailViewController.xib in Resources */,
@@ -573,18 +585,22 @@
 				E336090128A49CFB00D0661E /* CalculatorViewController.swift in Sources */,
 				E31021EE28AC908F002D3D4D /* UILable+Extensions.swift in Sources */,
 				E336086428A3649900D0661E /* SceneDelegate.swift in Sources */,
+				E3FF510C28B7489B00CF373F /* UIView+Extensions.swift in Sources */,
 				E336094828A4FEE400D0661E /* APIService.swift in Sources */,
 				E31021D228AB29CA002D3D4D /* APIRepository.swift in Sources */,
 				E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */,
+				E3FF50F528B70F7100CF373F /* WatchListViewController.swift in Sources */,
+				E3FF518228B87F5800CF373F /* CoinDataRepository.swift in Sources */,
+				E3FF517628B87EB600CF373F /* CrytoTrackerer.xcdatamodeld in Sources */,
 				E33608EB28A49CA500D0661E /* PortfolioViewController.swift in Sources */,
 				E3FF504A28B4799000CF373F /* Link.swift in Sources */,
 				E3FF50EE28B66F4B00CF373F /* String+Extensions.swift in Sources */,
 				E3FF502128B33A2900CF373F /* Constants.swift in Sources */,
 				E3FF504428B4798800CF373F /* Supply.swift in Sources */,
 				E3FF505428B4BF7000CF373F /* HistoryStats.swift in Sources */,
-				E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */,
+				E3FF517C28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift in Sources */,
 				E31021E028AB6FF6002D3D4D /* ImageManager.swift in Sources */,
-				E336091428A49F8300D0661E /* WatchListViewController.swift in Sources */,
+				E3FF517B28B87F3900CF373F /* WatchlistCoin+CoreDataClass.swift in Sources */,
 				E31021E428AB822A002D3D4D /* CoinList.swift in Sources */,
 				E31021C928AA1C2E002D3D4D /* DetailViewController.swift in Sources */,
 				E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */,
@@ -941,13 +957,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		E336086A28A3649900D0661E /* CryptoTracker.xcdatamodeld */ = {
+		E3FF517428B87EB600CF373F /* CrytoTrackerer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E336086B28A3649900D0661E /* CryptoTracker.xcdatamodel */,
+				E3FF517528B87EB600CF373F /* CrytoTrackerer.xcdatamodel */,
 			);
-			currentVersion = E336086B28A3649900D0661E /* CryptoTracker.xcdatamodel */;
-			path = CryptoTracker.xcdatamodeld;
+			currentVersion = E3FF517528B87EB600CF373F /* CrytoTrackerer.xcdatamodel */;
+			path = CrytoTrackerer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

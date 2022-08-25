@@ -28,6 +28,7 @@ final class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        fetchMoreDataFromAPI(url: urlResquest, message: .undetectedError)
     }
 
     private func configViews() {
@@ -95,7 +96,7 @@ extension HomeViewController: UITableViewDelegate {
         guard let cell = coinTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinCell else {
             return UITableViewCell()
         }
-        cell.setDataInCell(coin: listTopCoin[indexPath.row])
+        cell.setDataCell(coin: listTopCoin[indexPath.row])
         return cell
     }
 

@@ -67,7 +67,7 @@ extension SearchViewController: UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinCell else {
             return  UITableViewCell()
         }
-        cell.setDataInCell(coin: listSearchCoin[indexPath.row], error: .untrackedPrice)
+        cell.setDataCell(coin: listSearchCoin[indexPath.row], error: .untrackedPrice)
         return cell
     }
 

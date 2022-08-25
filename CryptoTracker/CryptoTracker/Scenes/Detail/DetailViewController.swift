@@ -7,15 +7,17 @@
 
 import UIKit
 import Charts
+import CoreData
 
 final class DetailViewController: UIViewController {
 
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet private var simpleViews: [UIView]!
+    @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var changeLabel: UILabel!
     @IBOutlet private weak var iconImage: UIImageView!
     @IBOutlet private weak var sympolLabel: UILabel!
     @IBOutlet private weak var rankLabel: UILabel!
-    @IBOutlet private weak var isFavourite: UIButton!
+    @IBOutlet private weak var favouriteButton: UIButton!
     @IBOutlet private weak var lineChartView: LineChartView!
     @IBOutlet private weak var segment: UISegmentedControl!
     @IBOutlet private weak var marketCap: UILabel!
@@ -25,6 +27,8 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var allTimeHigh: UILabel!
     @IBOutlet private weak var totalSupply: UILabel!
 
+    private var isFavorite = false
+    private var coinDataRepository = CoinDataRepository()
     private var historyPrices = [History]()
     private var coin: DetailCoin?
     private var uuid = ""
@@ -39,10 +43,45 @@ final class DetailViewController: UIViewController {
         configureChart()
         rankLabel.layer.cornerRadius = 10
         loadDetailCoinFromAPI(uuid: uuid, message: .undetectedError)
+        for simpleView in simpleViews {
+            simpleView.setBorderAndShadow()
+            simpleView.setRoundCorner()
+        }
+        setImageFavouriteButton()
     }
 
     @IBAction private func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction private func favouriteButtonPressed(_ sender: UIButton) {
+        guard let coin = coin else {
+            return
+        }
+        if !isFavorite {
+            let watchlistCoin = coinDataRepository.createCoinDataObject(coin: coin)
+            coinDataRepository.addCoin(myListObject: watchlistCoin) { [unowned self] error in
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            setImageFavouriteButton()
+        } else {
+            let listCoin = coinDataRepository.getAll { [unowned self] error in
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+            let deletedCoin =  listCoin.filter {$0.uuid == uuid}
+            coinDataRepository.removeCoin(myListObject: deletedCoin[0]) { [unowned self] error in
+                self.showAlert(title: "Erorr", message: error.localizedDescription)
+            }
+            setImageFavouriteButton()
+        }
+    }
+
+    private func setImageFavouriteButton() {
+        isFavorite = coinDataRepository.checkCoinExist(uuid: uuid, completion: { [unowned self] error in
+            self.showAlert(title: "Erorr", message: error.localizedDescription)
+        })
+
+        favouriteButton.setImage(UIImage(systemName: isFavorite ? "heart.fill" :  "heart"), for: .normal)
     }
 
     @IBAction private func timeSegmentPressed(_ sender: Any) {
@@ -122,9 +161,9 @@ final class DetailViewController: UIViewController {
         set.mode = .linear
         set.lineWidth = 1
         if chartEntry.first?.y ?? 10 < chartEntry.last?.y ?? 10 {
-            set.setColor(.red)
-        } else {
             set.setColor(.green)
+        } else {
+            set.setColor(.red)
         }
         let data = LineChartData(dataSet: set)
         data.setDrawValues(false)
