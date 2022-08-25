@@ -27,8 +27,6 @@
 		E336087C28A3649D00D0661E /* CryptoTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336087B28A3649D00D0661E /* CryptoTrackerTests.swift */; };
 		E336088728A3649D00D0661E /* CryptoTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336088628A3649D00D0661E /* CryptoTrackerUITests.swift */; };
 		E336089E28A365C700D0661E /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = E336089D28A365C700D0661E /* Charts */; };
-		E33608A028A365C700D0661E /* ChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E336089F28A365C700D0661E /* ChartsDynamic */; };
-		E33608A128A365C700D0661E /* ChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E336089F28A365C700D0661E /* ChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E33608EB28A49CA500D0661E /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33608E928A49CA500D0661E /* PortfolioViewController.swift */; };
 		E33608EC28A49CA500D0661E /* PortfolioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E33608EA28A49CA500D0661E /* PortfolioViewController.xib */; };
 		E33608F728A49CDF00D0661E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33608F528A49CDF00D0661E /* HomeViewController.swift */; };
@@ -50,6 +48,12 @@
 		E3EF5D5928AFB18900ED1588 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */; };
 		E3EF5D5D28AFB27100ED1588 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3EF5D5C28AFB27100ED1588 /* Key.plist */; };
 		E3FF502128B33A2900CF373F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF502028B33A2900CF373F /* Constants.swift */; };
+		E3FF503F28B473A900CF373F /* DetailCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF503E28B473A900CF373F /* DetailCoin.swift */; };
+		E3FF504428B4798800CF373F /* Supply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF504328B4798800CF373F /* Supply.swift */; };
+		E3FF504A28B4799000CF373F /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF504928B4799000CF373F /* Link.swift */; };
+		E3FF505428B4BF7000CF373F /* HistoryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF505328B4BF7000CF373F /* HistoryStats.swift */; };
+		E3FF505828B4C5A700CF373F /* TimeSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF505728B4C5A700CF373F /* TimeSegment.swift */; };
+		E3FF50EE28B66F4B00CF373F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF50ED28B66F4A00CF373F /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +80,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E33608A128A365C700D0661E /* ChartsDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +133,12 @@
 		E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		E3EF5D5C28AFB27100ED1588 /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		E3FF502028B33A2900CF373F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E3FF503E28B473A900CF373F /* DetailCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoin.swift; sourceTree = "<group>"; };
+		E3FF504328B4798800CF373F /* Supply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supply.swift; sourceTree = "<group>"; };
+		E3FF504928B4799000CF373F /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		E3FF505328B4BF7000CF373F /* HistoryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStats.swift; sourceTree = "<group>"; };
+		E3FF505728B4C5A700CF373F /* TimeSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSegment.swift; sourceTree = "<group>"; };
+		E3FF50ED28B66F4A00CF373F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E336089E28A365C700D0661E /* Charts in Frameworks */,
-				E33608A028A365C700D0661E /* ChartsDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +252,7 @@
 				E31021ED28AC908E002D3D4D /* UILable+Extensions.swift */,
 				E3EF5D3528ADE98B00ED1588 /* UIViewController+Extenstions.swift */,
 				E3EF5D5828AFB18900ED1588 /* UINavigationController+Extensions.swift */,
+				E3FF50ED28B66F4A00CF373F /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,6 +364,7 @@
 		E336094028A4F50B00D0661E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E3FF504228B4797000CF373F /* Detail Coin */,
 				E3CF353728A5EA0F0043289C /* Networking */,
 				E3CF354228A5EC130043289C /* Ranking.swift */,
 				E336094128A4F9B600D0661E /* Coin.swift */,
@@ -379,6 +389,18 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		E3FF504228B4797000CF373F /* Detail Coin */ = {
+			isa = PBXGroup;
+			children = (
+				E3FF503E28B473A900CF373F /* DetailCoin.swift */,
+				E3FF504328B4798800CF373F /* Supply.swift */,
+				E3FF504928B4799000CF373F /* Link.swift */,
+				E3FF505328B4BF7000CF373F /* HistoryStats.swift */,
+				E3FF505728B4C5A700CF373F /* TimeSegment.swift */,
+			);
+			path = "Detail Coin";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,7 +421,6 @@
 			name = CryptoTracker;
 			packageProductDependencies = (
 				E336089D28A365C700D0661E /* Charts */,
-				E336089F28A365C700D0661E /* ChartsDynamic */,
 			);
 			productName = CryptoTracker;
 			productReference = E336085E28A3649900D0661E /* CryptoTracker.app */;
@@ -556,7 +577,11 @@
 				E31021D228AB29CA002D3D4D /* APIRepository.swift in Sources */,
 				E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */,
 				E33608EB28A49CA500D0661E /* PortfolioViewController.swift in Sources */,
+				E3FF504A28B4799000CF373F /* Link.swift in Sources */,
+				E3FF50EE28B66F4B00CF373F /* String+Extensions.swift in Sources */,
 				E3FF502128B33A2900CF373F /* Constants.swift in Sources */,
+				E3FF504428B4798800CF373F /* Supply.swift in Sources */,
+				E3FF505428B4BF7000CF373F /* HistoryStats.swift in Sources */,
 				E336086C28A3649900D0661E /* CryptoTracker.xcdatamodeld in Sources */,
 				E31021E028AB6FF6002D3D4D /* ImageManager.swift in Sources */,
 				E336091428A49F8300D0661E /* WatchListViewController.swift in Sources */,
@@ -566,9 +591,11 @@
 				E31021C228A9E527002D3D4D /* CoinCell.swift in Sources */,
 				E31021BB28A9E04E002D3D4D /* SearchViewController.swift in Sources */,
 				E3CF354328A5EC130043289C /* Ranking.swift in Sources */,
+				E3FF505828B4C5A700CF373F /* TimeSegment.swift in Sources */,
 				E31021DC28AB354D002D3D4D /* UIImageView+Extensions.swift in Sources */,
 				E3CF355E28A62C970043289C /* RequestError.swift in Sources */,
 				E31021D628AB29D7002D3D4D /* Reponse.swift in Sources */,
+				E3FF503F28B473A900CF373F /* DetailCoin.swift in Sources */,
 				E33608F728A49CDF00D0661E /* HomeViewController.swift in Sources */,
 				E336094228A4F9B600D0661E /* Coin.swift in Sources */,
 				E3EF5D5928AFB18900ED1588 /* UINavigationController+Extensions.swift in Sources */,
@@ -910,11 +937,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E336089C28A365C700D0661E /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
-		};
-		E336089F28A365C700D0661E /* ChartsDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E336089C28A365C700D0661E /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = ChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 

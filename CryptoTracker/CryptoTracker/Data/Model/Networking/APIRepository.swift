@@ -33,4 +33,33 @@ final class APIRepository {
             }
         }
     }
+
+    func getDetailCoin(uuid: String, method: HTTPMethod, completion: @escaping (DetailCoin?, Error?) -> Void) {
+        APIService.shared.requestData(urlString: Network.shared.getDetailURL(uuid: uuid),
+                                      method: method.rawValue,
+                                      expecting: Response<DataDetailCoin>.self) { [weak self] result in
+            switch result {
+            case .success(let result):
+                completion(result.data.coin, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    func getHistoryStats(uuid: String, time: TimeSegment.RawValue,
+                         method: HTTPMethod,
+                         completion: @escaping ([History]?, Error?) -> Void) {
+        APIService.shared.requestData(urlString: Network.shared.getHistoryPriceURL(uuid: uuid, time: time),
+                                      method: method.rawValue,
+                                      expecting: Response<PriceHistory>.self) { [weak self] result in
+            switch result {
+            case .success(let result):
+                completion(result.data.history, nil)
+            case .failure(let error):
+                completion(nil, error)
+
+            }
+        }
+    }
 }
