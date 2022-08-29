@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 
 extension WatchlistCoin {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<WatchlistCoin> {
         return NSFetchRequest<WatchlistCoin>(entityName: "WatchlistCoin")
     }
@@ -20,7 +19,6 @@ extension WatchlistCoin {
     @NSManaged public var price: String?
     @NSManaged public var sympol: String
     @NSManaged public var image: String
-
 }
 
 extension WatchlistCoin: Identifiable {

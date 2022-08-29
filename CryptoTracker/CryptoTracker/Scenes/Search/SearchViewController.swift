@@ -13,7 +13,7 @@ final class SearchViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchLabel: UILabel!
 
-    var completionUuid: ((String) -> Void)?
+    var completionUuid: ((BaseCoin) -> Void)?
     private var listSearchCoin = [BaseCoin]()
     private var apiRepository = APIRepository()
 
@@ -57,8 +57,8 @@ final class SearchViewController: UIViewController {
     }
 
     private func popToPreviousViewController (index: Int) {
+        completionUuid?(listSearchCoin[index])
         navigationController?.popViewController(animated: true)
-        completionUuid?(listSearchCoin[index].uuid)
     }
 }
 

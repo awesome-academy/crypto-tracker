@@ -37,6 +37,8 @@
 		E336094228A4F9B600D0661E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094128A4F9B600D0661E /* Coin.swift */; };
 		E336094828A4FEE400D0661E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094728A4FEE400D0661E /* APIService.swift */; };
 		E336094C28A507A500D0661E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094B28A507A500D0661E /* Network.swift */; };
+		E362EE0C28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362EE0A28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift */; };
+		E362EE0D28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362EE0B28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift */; };
 		E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF353E28A5EA4E0043289C /* BaseCoin.swift */; };
 		E3CF354328A5EC130043289C /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF354228A5EC130043289C /* Ranking.swift */; };
 		E3CF355E28A62C970043289C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF355D28A62C970043289C /* RequestError.swift */; };
@@ -126,6 +128,8 @@
 		E336094128A4F9B600D0661E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		E336094728A4FEE400D0661E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E336094B28A507A500D0661E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E362EE0A28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortfolioCoin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E362EE0B28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortfolioCoin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3CF353E28A5EA4E0043289C /* BaseCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoin.swift; sourceTree = "<group>"; };
 		E3CF354228A5EC130043289C /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		E3CF355D28A62C970043289C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 		E33608AC28A3677600D0661E /* Core data */ = {
 			isa = PBXGroup;
 			children = (
+				E362EE0A28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift */,
+				E362EE0B28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift */,
 				E3FF517928B87F3900CF373F /* WatchlistCoin+CoreDataClass.swift */,
 				E3FF517A28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift */,
 				E3FF517428B87EB600CF373F /* CrytoTrackerer.xcdatamodeld */,
@@ -588,6 +594,7 @@
 				E3FF510C28B7489B00CF373F /* UIView+Extensions.swift in Sources */,
 				E336094828A4FEE400D0661E /* APIService.swift in Sources */,
 				E31021D228AB29CA002D3D4D /* APIRepository.swift in Sources */,
+				E362EE0C28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift in Sources */,
 				E3EF5D3228ADD75D00ED1588 /* HTTPMethod.swift in Sources */,
 				E3FF50F528B70F7100CF373F /* WatchListViewController.swift in Sources */,
 				E3FF518228B87F5800CF373F /* CoinDataRepository.swift in Sources */,
@@ -596,6 +603,7 @@
 				E3FF504A28B4799000CF373F /* Link.swift in Sources */,
 				E3FF50EE28B66F4B00CF373F /* String+Extensions.swift in Sources */,
 				E3FF502128B33A2900CF373F /* Constants.swift in Sources */,
+				E362EE0D28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift in Sources */,
 				E3FF504428B4798800CF373F /* Supply.swift in Sources */,
 				E3FF505428B4BF7000CF373F /* HistoryStats.swift in Sources */,
 				E3FF517C28B87F3900CF373F /* WatchlistCoin+CoreDataProperties.swift in Sources */,

@@ -62,4 +62,21 @@ final class APIRepository {
             }
         }
     }
+
+    func getEchangeRate(baseUUID: String,
+                        targetUUID: String,
+                        method: HTTPMethod,
+                        completion: @escaping (String?, Error?) -> Void) {
+        APIService.shared.requestData(urlString: Network.shared.getExchangeRates(base: baseUUID,
+                                                                                 target: targetUUID),
+                                      method: method.rawValue,
+                                      expecting: Response<History>.self) { [weak self] result in
+            switch result {
+            case .success(let result):
+                completion(result.data.price, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
 }

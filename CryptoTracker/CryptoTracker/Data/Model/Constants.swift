@@ -11,4 +11,6 @@ enum Constants: String {
     case untrackedPrice = "Untracked Price"
     case undetectedError = "Undetected Error"
     case searchResultError = "Search result is not available"
+    case bnbUUID = "WcwrkfNI4FUAe"
+    case usdtUUID = "HIVsRcGKkPFtW"
 }
