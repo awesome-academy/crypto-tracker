@@ -24,4 +24,12 @@ extension String {
         }
         return formattedNumber
     }
+
+    var isNumeric: Bool {
+        return Double(self) != nil
+    }
+
+    var doubleNumber: Double {
+        return Double(self) ?? 1.0
+    }
 }

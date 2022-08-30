@@ -15,7 +15,7 @@ struct Network {
     private let baseUrl = "https://api.coinranking.com/v2"
 
     func getCoinsURL(rank: Rangking) -> String {
-        return "\(baseUrl)/coins?orderBy=\(rank.rawValue)&limit=20"
+        return "\(baseUrl)/coins?orderBy=\(rank.rawValue)&limit="
     }
 
     func getDetailURL(uuid: String) -> String {

@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var coinTableView: UITableView!
     @IBOutlet private weak var rankStackView: UIStackView!
 
+    private var limit = 20
     private var urlResquest = Network.shared.getCoinsURL(rank: .marketCap)
     private var listTopCoin = [Coin]()
     private var apiRepository =  APIRepository()
@@ -23,12 +24,15 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configViews()
-        fetchDataFromAPI(urlRequet: urlResquest, message: .undetectedError)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
-        fetchMoreDataFromAPI(url: urlResquest, message: .undetectedError)
+        if listTopCoin.isEmpty {
+            fetchDataFromAPI(url: urlResquest + "\(limit)", message: .undetectedError)
+            return
+        }
+        fetchDataFromAPI(url: urlResquest + "\(listTopCoin.count)", message: .undetectedError)
     }
 
     private func configViews() {
@@ -52,7 +56,7 @@ final class HomeViewController: UIViewController {
         default:
             return
         }
-        fetchDataFromAPI(urlRequet: urlResquest, message: .undetectedError)
+        fetchDataFromAPI(url: urlResquest + "\(limit)", message: .undetectedError)
     }
 
     @IBAction private func openRankingOptions(_ sender: UIButton) {
@@ -64,8 +68,8 @@ final class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
 
-    private func fetchDataFromAPI (urlRequet: String, message: Constants) {
-        apiRepository.getListCoin(url: urlResquest, method: .get) { [unowned self] coins, error in
+    private func fetchDataFromAPI (url: String, message: Constants) {
+        apiRepository.getListCoin(url: url, method: .get) { [unowned self] coins, error in
             guard error == nil, let coins = coins else {
                 self.showAlert(title: "Error", message: error?.localizedDescription ?? message.rawValue)
                 return
@@ -119,7 +123,7 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if listTopCoin.count - 1 == indexPath.row {
-            fetchMoreDataFromAPI(url: urlResquest + "&offset=\(listTopCoin.count)", message: .undetectedError)
+            fetchMoreDataFromAPI(url: urlResquest + "\(limit)" + "&offset=\(listTopCoin.count)", message: .undetectedError)
         }
     }
 }

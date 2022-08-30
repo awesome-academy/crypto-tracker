@@ -33,6 +33,7 @@ final class WatchListViewController: UIViewController {
         })
         updateUI()
     }
+
     private func fetchDataCoreData () {
         coins = coinDataRepository.getAll(completion: { error in
             self.showAlert(title: "Error", message: error.localizedDescription)

@@ -28,3 +28,12 @@ extension UIView {
         self.layer.masksToBounds = isMaskToBound
     }
 }
+
+extension UIButton {
+    func setContentInSet(top: CGFloat = 10.0,
+                         left: CGFloat = 10.0,
+                         bottom: CGFloat = 10.0,
+                         right: CGFloat = 10.0) {
+        self.contentEdgeInsets = UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+    }
+}

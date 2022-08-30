@@ -14,9 +14,11 @@ final class CoinCell: UITableViewCell {
     @IBOutlet private weak var coinSympol: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var priceChangeLabel: UILabel!
+    @IBOutlet private weak var amountCoinLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        amountCoinLabel.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -54,6 +56,17 @@ final class CoinCell: UITableViewCell {
         coinSympol.text = coin.sympol
         priceLabel.setPriceNumber(priceString: coin.price ?? "N/A")
         priceChangeLabel.isHidden = true
+        let pngUrl = coin.image.replacingOccurrences(of: "svg", with: "png")
+        if let url = URL(string: pngUrl) {
+            coinImage.setImage(from: url)
+        }
+    }
+
+    func setDataCell(coin: PortfolioCoin) {
+        coinName.text = coin.name
+        coinSympol.text = "\(coin.amount) \(coin.symbol)"
+        priceChangeLabel.isHidden = true
+        priceLabel.isHidden = true
         let pngUrl = coin.image.replacingOccurrences(of: "svg", with: "png")
         if let url = URL(string: pngUrl) {
             coinImage.setImage(from: url)

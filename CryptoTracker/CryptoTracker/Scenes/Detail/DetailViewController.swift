@@ -39,15 +39,18 @@ final class DetailViewController: UIViewController {
         configViews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        loadDetailCoinFromAPI(uuid: uuid, message: .undetectedError)
+        setImageFavouriteButton()
+    }
+
     private func configViews() {
         configureChart()
         rankLabel.layer.cornerRadius = 10
-        loadDetailCoinFromAPI(uuid: uuid, message: .undetectedError)
         for simpleView in simpleViews {
             simpleView.setBorderAndShadow()
             simpleView.setRoundCorner()
         }
-        setImageFavouriteButton()
     }
 
     @IBAction private func backButtonPressed(_ sender: UIButton) {

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PortfolioCoin" representedClassName="PortfolioCoin" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="WatchlistCoin" representedClassName="WatchlistCoin" syncable="YES">
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -9,5 +17,6 @@
     </entity>
     <elements>
         <element name="WatchlistCoin" positionX="-45" positionY="0" width="128" height="118"/>
+        <element name="PortfolioCoin" positionX="-45" positionY="36" width="128" height="133"/>
     </elements>
 </model>
