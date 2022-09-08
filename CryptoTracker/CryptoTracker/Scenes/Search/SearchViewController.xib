@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-HR-hLz">
+                <searchBar contentMode="redraw" text="BNB" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-HR-hLz">
                     <rect key="frame" x="0.0" y="44" width="354" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
