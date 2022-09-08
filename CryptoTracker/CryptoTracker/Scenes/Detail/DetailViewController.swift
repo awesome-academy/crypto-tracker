@@ -27,11 +27,11 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var allTimeHigh: UILabel!
     @IBOutlet private weak var totalSupply: UILabel!
 
-    private var isFavorite = false
+    var isFavorite = false
     private var coinDataRepository = CoinDataRepository()
-    private var historyPrices = [History]()
-    private var coin: DetailCoin?
-    private var uuid = ""
+    var historyPrices = [History]()
+    var detailCoin: DetailCoin?
+    private var uuid = "Qwsogvtv82FCd"
     private var apiRepository = APIRepository()
 
     override func viewDidLoad() {
@@ -53,12 +53,12 @@ final class DetailViewController: UIViewController {
         }
     }
 
-    @IBAction private func backButtonPressed(_ sender: UIButton) {
+    @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction private func favouriteButtonPressed(_ sender: UIButton) {
-        guard let coin = coin else {
+    @IBAction func favouriteButtonPressed(_ sender: UIButton) {
+        guard let coin = detailCoin else {
             return
         }
         if !isFavorite {
@@ -87,7 +87,7 @@ final class DetailViewController: UIViewController {
         favouriteButton.setImage(UIImage(systemName: isFavorite ? "heart.fill" :  "heart"), for: .normal)
     }
 
-    @IBAction private func timeSegmentPressed(_ sender: Any) {
+    @IBAction func timeSegmentPressed(_ sender: Any) {
         var time = ""
         switch segment.selectedSegmentIndex {
         case 0:
@@ -105,18 +105,17 @@ final class DetailViewController: UIViewController {
         }
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        apiRepository.getHistoryStats(uuid: uuid, time: time, method: .get) {  [unowned self] history, error in
+        apiRepository.getHistoryStats(uuid: uuid, time: time, method: .get) { [weak self] history, error in
             guard error == nil, let history = history else {
-                self.showAlert(title: "Alert",
+                self?.showAlert(title: "Alert",
                                message: error?.localizedDescription ?? Constants.undetectedError.rawValue)
                 return
             }
-            self.historyPrices = history
+            self?.historyPrices = history
             dispatchGroup.leave()
         }
         dispatchGroup.notify(queue: .main) { [weak self] in
-            guard let self = self else { return }
-            self.loadDataChartDetailViewController()
+            self?.loadDataChartDetailViewController()
         }
     }
 
@@ -124,37 +123,38 @@ final class DetailViewController: UIViewController {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         apiRepository.getDetailCoin(uuid: uuid,
-                                    method: .get) { [unowned self] coin, error in
+                                    method: .get) { [weak self] coin, error in
             guard error == nil, let coin = coin else {
                 let errorMessage = error?.localizedDescription ?? message.rawValue
-                self.showAlert(title: "Alert", message: errorMessage)
+                self?.showAlert(title: "Alert", message: errorMessage)
+                dispatchGroup.leave()
                 return
             }
-            self.coin = coin
+            self?.detailCoin = coin
             dispatchGroup.leave()
         }
         dispatchGroup.enter()
         apiRepository.getHistoryStats(uuid: uuid,
                                       time: TimeSegment.oneHour.rawValue,
-                                      method: .get) { [unowned self] history, error  in
+                                      method: .get) { [weak self] history, error  in
             guard error == nil, let history = history else {
                 let errorMessage = error?.localizedDescription ?? message.rawValue
-                self.showAlert(title: "Alert", message: errorMessage)
+                self?.showAlert(title: "Alert", message: errorMessage)
+                dispatchGroup.leave()
                 return
             }
-            self.historyPrices = history
+            self?.historyPrices = history
             dispatchGroup.leave()
         }
         dispatchGroup.notify(queue: .main) { [weak self] in
-            guard let self = self else { return }
-            self.setDataDetailViewController()
-            self.loadDataChartDetailViewController()
+            self?.setDataDetailViewController()
+            self?.loadDataChartDetailViewController()
         }
     }
 
-    private func loadDataChartDetailViewController() {
+    func loadDataChartDetailViewController() {
         let chartEntry = historyPrices.enumerated().map { index, historyPrices -> ChartDataEntry in
-            guard let price = Double((historyPrices.price ?? coin?.price) ?? "N/A") else {
+            guard let price = Double((historyPrices.price ?? detailCoin?.price) ?? "N/A") else {
                 return ChartDataEntry(x: Double(index), y: 0)
             }
             return ChartDataEntry(x: Double(index), y: price)
@@ -182,8 +182,8 @@ final class DetailViewController: UIViewController {
         lineChartView.animate(xAxisDuration: 2)
     }
 
-    private func setDataDetailViewController() {
-        guard let coin = coin else {
+    func setDataDetailViewController() {
+        guard let coin = detailCoin else {
             return
         }
         self.marketCap.text = "$\(coin.marketCap.convertToNumber())"

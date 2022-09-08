@@ -8,12 +8,12 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-    @IBOutlet private weak var rankedByChangeButton: UIButton!
-    @IBOutlet private weak var rankedBy2VolumePerDayButton: UIButton!
-    @IBOutlet weak private var rankedByMarketCapButton: UIButton!
-    @IBOutlet private weak var rankedByPriceButton: UIButton!
+    @IBOutlet weak var rankedByChangeButton: UIButton!
+    @IBOutlet weak var rankedBy2VolumePerDayButton: UIButton!
+    @IBOutlet weak var rankedByMarketCapButton: UIButton!
+    @IBOutlet weak var rankedByPriceButton: UIButton!
     @IBOutlet private weak var rankButton: UIButton!
-    @IBOutlet private weak var coinTableView: UITableView!
+    @IBOutlet weak var coinTableView: UITableView!
     @IBOutlet private weak var rankStackView: UIStackView!
 
     private var limit = 20
@@ -42,7 +42,7 @@ final class HomeViewController: UIViewController {
         coinTableView.register(UINib.init(nibName: "CoinCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
-    @IBAction private func rankButtonPressed(_ sender: UIButton) {
+    @IBAction func rankButtonPressed(_ sender: UIButton) {
         rankStackView.isHidden = true
         switch sender {
         case rankedByPriceButton:
@@ -59,17 +59,18 @@ final class HomeViewController: UIViewController {
         fetchDataFromAPI(url: urlResquest + "\(limit)", message: .undetectedError)
     }
 
-    @IBAction private func openRankingOptions(_ sender: UIButton) {
+    @IBAction func openRankingOptions(_ sender: UIButton) {
         rankStackView.isHidden = false
     }
 
-    @IBAction private func openSearchController(_ sender: UIButton) {
+    @IBAction func openSearchController(_ sender: UIButton) {
         let searchVC = SearchViewController()
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
 
     private func fetchDataFromAPI (url: String, message: Constants) {
-        apiRepository.getListCoin(url: url, method: .get) { [unowned self] coins, error in
+        apiRepository.getListCoin(url: url, method: .get) { [weak self] coins, error in
+            guard let self = self else {return}
             guard error == nil, let coins = coins else {
                 self.showAlert(title: "Error", message: error?.localizedDescription ?? message.rawValue)
                 return
@@ -81,7 +82,7 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    private func fetchMoreDataFromAPI (url: String, message: Constants) {
+    func fetchMoreDataFromAPI (url: String, message: Constants) {
         apiRepository.getListCoin(url: url, method: .get) { [unowned self] coins, error in
             guard error == nil, let coins = coins else {
                 self.showAlert(title: "Error", message: error?.localizedDescription ?? message.rawValue)
@@ -112,7 +113,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coinTableView.deselectRow(at: indexPath, animated: false)
         let detailVC = DetailViewController()
-        detailVC.setUuid(uuid: listTopCoin[indexPath.row].uuid)
+        detailVC.setUuid(uuid: "Qwsogvtv82FCd")
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

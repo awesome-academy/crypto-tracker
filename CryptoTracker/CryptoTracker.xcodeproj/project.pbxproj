@@ -37,6 +37,12 @@
 		E336094228A4F9B600D0661E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094128A4F9B600D0661E /* Coin.swift */; };
 		E336094828A4FEE400D0661E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094728A4FEE400D0661E /* APIService.swift */; };
 		E336094C28A507A500D0661E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336094B28A507A500D0661E /* Network.swift */; };
+		E33843CE28C58C2400F39FF3 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33843CD28C58C2400F39FF3 /* HomeViewControllerTest.swift */; };
+		E33843E528C5D9C400F39FF3 /* CaculatorViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33843E428C5D9C400F39FF3 /* CaculatorViewControllerTest.swift */; };
+		E33843E928C5ED2200F39FF3 /* DetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33843E828C5ED2200F39FF3 /* DetailViewControllerTest.swift */; };
+		E33843ED28C5F92000F39FF3 /* SearchViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33843EC28C5F92000F39FF3 /* SearchViewControllerTest.swift */; };
+		E33843F128C5F98100F39FF3 /* WatchlistViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33843F028C5F98100F39FF3 /* WatchlistViewControllerTest.swift */; };
+		E33843F528C5FF3200F39FF3 /* PortfolioViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33843F428C5FF3200F39FF3 /* PortfolioViewControllerTest.swift */; };
 		E362EE0C28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362EE0A28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift */; };
 		E362EE0D28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362EE0B28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift */; };
 		E3CF353F28A5EA4E0043289C /* BaseCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF353E28A5EA4E0043289C /* BaseCoin.swift */; };
@@ -128,6 +134,12 @@
 		E336094128A4F9B600D0661E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		E336094728A4FEE400D0661E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E336094B28A507A500D0661E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E33843CD28C58C2400F39FF3 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
+		E33843E428C5D9C400F39FF3 /* CaculatorViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaculatorViewControllerTest.swift; sourceTree = "<group>"; };
+		E33843E828C5ED2200F39FF3 /* DetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTest.swift; sourceTree = "<group>"; };
+		E33843EC28C5F92000F39FF3 /* SearchViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTest.swift; sourceTree = "<group>"; };
+		E33843F028C5F98100F39FF3 /* WatchlistViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewControllerTest.swift; sourceTree = "<group>"; };
+		E33843F428C5FF3200F39FF3 /* PortfolioViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewControllerTest.swift; sourceTree = "<group>"; };
 		E362EE0A28BBB48A00554DA8 /* PortfolioCoin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortfolioCoin+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E362EE0B28BBB48A00554DA8 /* PortfolioCoin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PortfolioCoin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E3CF353E28A5EA4E0043289C /* BaseCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoin.swift; sourceTree = "<group>"; };
@@ -242,8 +254,14 @@
 		E336087A28A3649D00D0661E /* CryptoTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				E336087B28A3649D00D0661E /* CryptoTrackerTests.swift */,
 				E336087D28A3649D00D0661E /* Info.plist */,
+				E336087B28A3649D00D0661E /* CryptoTrackerTests.swift */,
+				E33843CD28C58C2400F39FF3 /* HomeViewControllerTest.swift */,
+				E33843E428C5D9C400F39FF3 /* CaculatorViewControllerTest.swift */,
+				E33843E828C5ED2200F39FF3 /* DetailViewControllerTest.swift */,
+				E33843EC28C5F92000F39FF3 /* SearchViewControllerTest.swift */,
+				E33843F028C5F98100F39FF3 /* WatchlistViewControllerTest.swift */,
+				E33843F428C5FF3200F39FF3 /* PortfolioViewControllerTest.swift */,
 			);
 			path = CryptoTrackerTests;
 			sourceTree = "<group>";
@@ -631,7 +649,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E33843F128C5F98100F39FF3 /* WatchlistViewControllerTest.swift in Sources */,
 				E336087C28A3649D00D0661E /* CryptoTrackerTests.swift in Sources */,
+				E33843F528C5FF3200F39FF3 /* PortfolioViewControllerTest.swift in Sources */,
+				E33843E528C5D9C400F39FF3 /* CaculatorViewControllerTest.swift in Sources */,
+				E33843CE28C58C2400F39FF3 /* HomeViewControllerTest.swift in Sources */,
+				E33843ED28C5F92000F39FF3 /* SearchViewControllerTest.swift in Sources */,
+				E33843E928C5ED2200F39FF3 /* DetailViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

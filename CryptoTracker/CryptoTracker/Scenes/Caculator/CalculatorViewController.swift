@@ -41,13 +41,14 @@ final class CalculatorViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyBoard))
         view.addGestureRecognizer(tap)
+        getExhangeRateFromAPI()
     }
 
     @objc func dismissKeyBoard() {
         view.endEditing(true)
     }
 
-    @IBAction private func exchangeButton(_ sender: UIButton) {
+    @IBAction func exchangeButton(_ sender: UIButton) {
         getExhangeRateFromAPI()
     }
 
@@ -58,26 +59,26 @@ final class CalculatorViewController: UIViewController {
         let targetUUID = targetCoin?.uuid ?? Constants.usdtUUID.rawValue
         apiRepository.getEchangeRate(baseUUID: baseUUID,
                                      targetUUID: targetUUID,
-                                     method: .get) { [unowned self] rate, error in
+                                     method: .get) { [weak self] rate, error in
             guard error == nil, let rate = rate else {
                 let message = error?.localizedDescription ?? Constants.undetectedError.rawValue
-                self.showAlert(title: "Alert", message: message)
+                self?.showAlert(title: "Alert", message: message)
                 return
             }
-            self.exchangeRate = rate
+            self?.exchangeRate = rate
             dispatchGroup.leave()
         }
-        dispatchGroup.notify(queue: .main) { [unowned self] in
-            guard let baseNumber = self.targetTextfield.text, baseNumber.isNumeric, self.exchangeRate.isNumeric else {
-                self.showAlert(title: "Error", message: "Please input valid number")
+        dispatchGroup.notify(queue: .main) { [weak self] in
+            guard let baseNumber = self?.targetTextfield.text, baseNumber.isNumeric(), ((self?.exchangeRate.isNumeric()) != nil) else {
+                self?.showAlert(title: "Error", message: "Please input valid number")
                 return
             }
-            let result = (Double(self.exchangeRate) ?? 1.0 ) * (Double(baseNumber) ?? 1.0)
-            self.resultLabel.text = String(result).convertToNumber()
+            let result = (Double(self!.exchangeRate) ?? 1.0 ) * (Double(baseNumber) ?? 1.0)
+            self?.resultLabel.text = String(result).convertToNumber()
         }
     }
 
-    private func coinButtonPressed (button: UIButton) {
+    func coinButtonPressed (button: UIButton) {
         let searchVC = SearchViewController()
         searchVC.completionUuid = { [weak self] result in
             guard let self = self else {
@@ -96,7 +97,7 @@ final class CalculatorViewController: UIViewController {
         navigationController?.pushViewController(searchVC, animated: true)
     }
 
-    @IBAction private func baseCoinButtonPressed(_ sender: UIButton) {
+    @IBAction func baseCoinButtonPressed(_ sender: UIButton) {
         coinButtonPressed(button: sender)
     }
 

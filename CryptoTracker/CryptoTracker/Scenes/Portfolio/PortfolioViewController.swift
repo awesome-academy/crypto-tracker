@@ -12,7 +12,7 @@ final class PortfolioViewController: UIViewController {
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var investmentLabel: UILabel!
     @IBOutlet private weak var addCoinView: UIView!
-    @IBOutlet private weak var portfolioTableView: UITableView!
+    @IBOutlet weak var portfolioTableView: UITableView!
     @IBOutlet private weak var searchCoinButton: UIButton!
     @IBOutlet private weak var coinTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
@@ -22,7 +22,7 @@ final class PortfolioViewController: UIViewController {
     private var investmentValue = 0.0
     private var balanceValue = 1.0
     private var listPortfolioCoins = [PortfolioCoin]()
-    private var coin: BaseCoin?
+    var portfolioCoin: BaseCoin?
     private var apiRepository = APIRepository()
     private var coreDataRepository = CoinDataRepository()
     private var listDetailCoin = [DetailCoin]()
@@ -41,7 +41,7 @@ final class PortfolioViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyBoard))
         view.addGestureRecognizer(tap)
     }
-    @objc private func dismissKeyBoard() {
+    @objc func dismissKeyBoard() {
         view.endEditing(true)
     }
 
@@ -64,6 +64,7 @@ final class PortfolioViewController: UIViewController {
                     guard error == nil, let coin = coin else {
                         let errorMessage = error?.localizedDescription ?? Constants.undetectedError.rawValue
                         self.showAlert(title: "Alert", message: errorMessage)
+                        group.leave()
                         return
                     }
                     let amount = Double(coinIndex.amount) ?? 1.0
@@ -88,14 +89,14 @@ final class PortfolioViewController: UIViewController {
         }
     }
 
-    @IBAction private func searchCoinButtonPressed(_ sender: UIButton) {
+    @IBAction func searchCoinButtonPressed(_ sender: UIButton) {
         let searchVC  =  SearchViewController()
         searchVC.completionUuid = { [weak self] result in
-            guard  let self = self else {
+            guard let self = self else {
                 return
             }
-            self.coin = result
-            sender.setTitle("\(self.coin?.symbol ?? "N/A") ⌵", for: .normal)
+            self.portfolioCoin = result
+            sender.setTitle("\(self.portfolioCoin?.symbol ?? "N/A") ⌵", for: .normal)
         }
         navigationController?.pushViewController(searchVC, animated: true)
     }
@@ -104,15 +105,18 @@ final class PortfolioViewController: UIViewController {
         saveCoinData()
     }
 
-    private func saveCoinData() {
-        guard let numberCoin = coinTextField.text else {
+    func saveCoinData() {
+        coinTextField.text = "123.0"
+        guard let numberCoin = coinTextField.text, numberCoin.isNumeric() else {
             self.showAlert(title: "Error", message: "Please input the amount of coin")
             return
         }
-        guard let coin = coin, let priceCoin = coin.price, priceCoin.isNumeric, numberCoin.isNumeric else {
+
+        guard let coin = portfolioCoin, let priceCoin = coin.price, priceCoin.isNumeric() else {
             self.showAlert(title: "Error", message: "Please input valid number")
             return
         }
+
         let isExisted = coreDataRepository.checkPortfolioCoinExist(uuid: coin.uuid,
                                                                    completion: { [unowned self] error in
              self.showAlert(title: "Error", message: error.localizedDescription)

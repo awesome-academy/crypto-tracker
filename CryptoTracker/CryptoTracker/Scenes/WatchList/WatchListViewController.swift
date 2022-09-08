@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 final class WatchListViewController: UIViewController {
-    @IBOutlet private weak var watchlistTableView: UITableView!
+    @IBOutlet weak var watchlistTableView: UITableView!
 
     private var coins = [WatchlistCoin]()
     private var coinDataRepository = CoinDataRepository()
@@ -39,17 +39,15 @@ final class WatchListViewController: UIViewController {
             self.showAlert(title: "Error", message: error.localizedDescription)
         })
     }
+
     private func updateUI() {
         fetchDataCoreData()
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {
-                return
-            }
+        DispatchQueue.main.async {
             self.watchlistTableView.reloadData()
         }
     }
 
-    @IBAction private func openSearchScreen(_ sender: UIButton) {
+    @IBAction func openSearchScreen(_ sender: UIButton) {
         let searchVC = SearchViewController()
         navigationController?.pushViewController(searchVC, animated: true)
     }

@@ -9,9 +9,9 @@ import UIKit
 
 final class SearchViewController: UIViewController {
 
-    @IBOutlet private weak var searchCoinTableView: UITableView!
-    @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet private weak var searchLabel: UILabel!
+    @IBOutlet weak var searchCoinTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchLabel: UILabel!
 
     var completionUuid: ((BaseCoin) -> Void)?
     private var listSearchCoin = [BaseCoin]()
@@ -31,32 +31,37 @@ final class SearchViewController: UIViewController {
         searchBar.delegate = self
     }
 
-    @IBAction private func cancelPressed(_ sender: UIButton) {
+    @IBAction func cancelPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
 
     private func loadSearchDataFromAPI (urlRequest: String, message: Constants) {
         apiRepository.getListSearchCoin(url: urlRequest,
-                                        method: .get) { [unowned self] searchCoins, error in
-            guard error == nil, let searchCoins = searchCoins else {
+                                        method: .get) { [weak self] searchCoins, error in
+            guard let self = self else { return }
+            guard let searchCoins = searchCoins else {  return }
+            guard error == nil else {
                 self.showAlert(title: "Alert", message: error?.localizedDescription ?? message.rawValue)
                 return
             }
             self.listSearchCoin = searchCoins
-            DispatchQueue.main.async {
-                self.searchCoinTableView.reloadData()
-                searchLabel.text = listSearchCoin.count != 0 ? "" : message.rawValue
-            }
+            self.updateUI()
         }
     }
 
-    private func pushToDetailViewController (index: Int) {
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.searchCoinTableView.reloadData()
+            self.searchLabel.text = self.listSearchCoin.count != 0 ? "" : Constants.searchResultError.rawValue
+        }
+    }
+    func pushToDetailViewController (index: Int) {
         let detailVC = DetailViewController()
-        detailVC.setUuid(uuid: listSearchCoin[index].uuid)
+        detailVC.setUuid(uuid: "Qwsogvtv82FCd")
         navigationController?.pushViewController(detailVC, animated: true)
     }
 
-    private func popToPreviousViewController (index: Int) {
+    func popToPreviousViewController (index: Int) {
         completionUuid?(listSearchCoin[index])
         navigationController?.popViewController(animated: true)
     }

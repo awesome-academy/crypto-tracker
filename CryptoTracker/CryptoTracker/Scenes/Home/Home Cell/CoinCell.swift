@@ -40,6 +40,7 @@ final class CoinCell: UITableViewCell {
             coinImage.setImage(from: url)
         }
     }
+
     func setDataCell(coin: BaseCoin, error: Constants) {
         coinName.text = coin.name
         coinSympol.text = coin.symbol
